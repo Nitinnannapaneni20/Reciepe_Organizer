@@ -13,30 +13,32 @@
     <div class="container">
         <h1>Recipe List</h1>
         <table class="recipe-table">
-            <thead>
-                <tr>
-                <th class="serial-no">S.No</th>
-                <th class="recipe-name">Recipe Name</th>
-                <th class="actions">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
+        <thead>
+            <tr>
+            <th class="serial-no">S.No</th>
+            <th class="recipe-name">Recipe Name</th>
+            <th class="recipe-cuisine">Cuisine</th>
+            <th class="actions">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
             @foreach ($recipes as $recipe)
-                <tr>
-                <td class="serial-no">{{ $loop->iteration }}</td>
-                <td class="recipe-name">{{ $recipe->name }}</td>
-                <td class="actions">
-                        <a href="{{ route('recipes.show', $recipe->id) }}" class="btn btn-view">View</a>
-                        <a href="/recipes/{{ $recipe->id }}/edit" class="btn btn-edit">Edit</a>
-                        <form action="/recipes/{{ $recipe->id }}" method="POST" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-delete">Delete</button>
-                        </form>
-                    </td>
-                </tr>
+            <tr>
+            <td class="serial-no">{{ $loop->iteration }}</td>
+            <td class="recipe-name">{{ $recipe->name }}</td>
+            <td class="recipe-cuisine">{{ $recipe->cuisine }}</td>
+            <td class="actions">
+            <a href="{{ route('recipes.show', $recipe->id) }}" class="btn btn-view">View</a>
+                    <a href="/recipes/{{ $recipe->id }}/edit" class="btn btn-edit">Edit</a>
+                    <form action="/recipes/{{ $recipe->id }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
             @endforeach
-            </tbody>
+        </tbody>
         </table>
     </div>
 </body>

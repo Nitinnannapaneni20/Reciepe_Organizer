@@ -29,17 +29,18 @@ class RecipeController extends Controller
     public function store(Request $request)
     {
         // Validate the request
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'ingredients' => 'required|string',
-            'instructions' => 'required|string',
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'cuisine' => 'required',  // Add this
+            'ingredients' => 'required',
+            'instructions' => 'required',
         ]);
 
         // Create a new recipe
-        Recipe::create($validated);
+        Recipe::create($validatedData);
 
         // Redirect back to the index page with a success message
-        return redirect()->route('recipes.index')->with('success', 'Recipe created successfully.');
+        return redirect()->route('recipes.index')->with('success', 'Recipe added successfully.');
     }
     
     // Show the edit form

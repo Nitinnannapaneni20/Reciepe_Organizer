@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Add New Recipe</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/create_style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar_style.css') }}">
 </head>
 <body>
     @include('partials.navbar')
@@ -10,7 +11,6 @@
     <div class="container">
         <h1>Add New Recipe</h1>
 
-        <!-- Form for adding a new recipe -->
         <form action="{{ route('recipes.store') }}" method="POST">
             @csrf
 

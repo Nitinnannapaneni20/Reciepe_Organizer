@@ -16,10 +16,18 @@
         <thead>
             <tr>
             <th class="serial-no">S.No</th>
-            <th class="recipe-name">Recipe Name</th>
-            <th class="recipe-cuisine">Cuisine</th>
-            <th class="actions">Actions</th>
-            </tr>
+                <th class="recipe-name">
+                <a href="{{ route('recipes.index', ['sort_by' => 'name', 'order' => $order === 'asc' ? 'desc' : 'asc']) }}">
+                    Recipe Name {!! $column === 'name' ? ($order === 'asc' ? '↑' : '↓') : '↑' !!}
+                </a>
+                </th>
+                <th class="recipe-cuisine">
+                <a href="{{ route('recipes.index', ['sort_by' => 'cuisine', 'order' => $order === 'asc' ? 'desc' : 'asc']) }}">
+                    Cuisine {!! $column === 'cuisine' ? ($order === 'asc' ? '↑' : '↓') : '↑' !!}
+                </a>
+                </th>
+                <th class="actions">Actions</th>
+                </tr>
         </thead>
         <tbody>
             @foreach ($recipes as $recipe)

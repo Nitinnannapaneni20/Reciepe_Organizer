@@ -13,7 +13,7 @@ class RecipeController extends Controller
         $column = $request->input('sort_by', 'id');
         $order = $request->input('order', 'asc');
         
-        $recipes = applySorting(Recipe::query(), $column, $order)->get();
+        $recipes = applySorting(Recipe::query(), $column, $order)->paginate(10);
         
         return view('recipes.index', compact('recipes', 'column', 'order'));
     }

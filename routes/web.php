@@ -5,6 +5,12 @@ use App\Http\Controllers\RecipeController;
 
 Route::get('/', [RecipeController::class, 'index'])->name('recipes.index');
 
+// Route to show the form to create a new recipe
+Route::get('/create', [RecipeController::class, 'create'])->name('recipes.create');
+
+// Route to store the newly created recipe
+Route::post('/', [RecipeController::class, 'store'])->name('recipes.store');
+
 // Route to show edit form
 Route::get('/recipes/{id}/edit', [RecipeController::class, 'edit'])->name('recipes.edit');
 

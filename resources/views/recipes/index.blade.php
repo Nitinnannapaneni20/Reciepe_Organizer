@@ -13,31 +13,33 @@
     <div class="container">
         <h1>Recipe List</h1>
         <table class="recipe-table">
-            <thead>
-                <tr>
-                    <th>Recipe Name</th>
-                    <th>Ingredients</th>
-                    <th>Instructions</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            @foreach ($recipes as $recipe)
-                <tr>
-                    <td>{{ $recipe->name }}</td>
-                    <td>{{ $recipe->ingredients }}</td>
-                    <td>{{ $recipe->instructions }}</td>
-                    <td>
-                        <a href="/recipes/{{ $recipe->id }}/edit" class="btn btn-edit">Edit</a>
-                        <form action="/recipes/{{ $recipe->id }}" method="POST" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-delete">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
+        <thead>
+            <tr>
+                <th class="serial-no">S.No</th>
+                <th class="recipe-name">Recipe Name</th>
+                <th class="ingredients">Ingredients</th>
+                <th class="instructions">Instructions</th>
+                <th class="actions">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach ($recipes as $recipe)
+            <tr>
+                <td class="serial-no">{{ $loop->iteration }}</td>
+                <td class="recipe-name">{{ $recipe->name }}</td>
+                <td class="ingredients">{{ $recipe->ingredients }}</td>
+                <td class="instructions">{{ $recipe->instructions }}</td>
+                <td class="actions">
+                    <a href="/recipes/{{ $recipe->id }}/edit" class="btn btn-edit">Edit</a>
+                    <form action="/recipes/{{ $recipe->id }}" method="POST" style="display: inline-block;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
         </table>
     </div>
 </body>

@@ -47,19 +47,11 @@ h1 {
 }
 
 .recipe-table th.recipe-name, .recipe-table td.recipe-name {
-    width: 150px;
-}
-
-.recipe-table th.ingredients, .recipe-table td.ingredients {
-    width: 200px;
-}
-
-.recipe-table th.instructions, .recipe-table td.instructions {
-    width: auto; /* Take the remaining space */
+    width: auto;
 }
 
 .recipe-table th.actions, .recipe-table td.actions {
-    width: 150px;
+    width: 300px;
 }
 
 /* Button Styling */
@@ -70,6 +62,10 @@ h1 {
     border-radius: 4px;
     margin: 0 5px;
     cursor: pointer;
+}
+
+.btn-view {
+    background-color: #0852a1;  /* Bootstrap's primary color */
 }
 
 .btn-edit {

@@ -41,6 +41,27 @@ h1 {
     color: #333;
 }
 
+/* Set fixed widths for specific columns */
+.recipe-table th.serial-no, .recipe-table td.serial-no {
+    width: 50px;
+}
+
+.recipe-table th.recipe-name, .recipe-table td.recipe-name {
+    width: 150px;
+}
+
+.recipe-table th.ingredients, .recipe-table td.ingredients {
+    width: 200px;
+}
+
+.recipe-table th.instructions, .recipe-table td.instructions {
+    width: auto; /* Take the remaining space */
+}
+
+.recipe-table th.actions, .recipe-table td.actions {
+    width: 150px;
+}
+
 /* Button Styling */
 .btn {
     padding: 8px 12px;

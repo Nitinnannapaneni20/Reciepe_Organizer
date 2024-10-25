@@ -94,6 +94,37 @@ h1 {
     opacity: 0.9;
 }
 
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.pagination-container p {
+    margin: 30px 0;
+    color: #333;
+}
+
+.pagination-links a,
+.pagination-links span {
+    color: #007bff;
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.pagination-links .active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination-links .disabled {
+    color: #ccc;
+}
+
 /* Adjustments for Small Screens */
 @media (max-width: 768px) {
     .container {

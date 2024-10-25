@@ -49,5 +49,30 @@
         </tbody>
         </table>
     </div>
+
+    <div class="pagination-container">
+        <p>
+            Showing {{ $recipes->firstItem() }} to {{ $recipes->lastItem() }} of {{ $recipes->total() }} results
+        </p>
+        
+        <div class="pagination-links">
+            @if ($recipes->onFirstPage())
+                <span class="disabled">Previous</span>
+            @else
+                <a href="{{ $recipes->previousPageUrl() }}">Previous</a>
+            @endif
+
+            @foreach ($recipes->getUrlRange(1, $recipes->lastPage()) as $page => $url)
+                <a href="{{ $url }}" class="{{ $page == $recipes->currentPage() ? 'active' : '' }}">{{ $page }}</a>
+            @endforeach
+
+            @if ($recipes->hasMorePages())
+                <a href="{{ $recipes->nextPageUrl() }}">Next</a>
+            @else
+                <span class="disabled">Next</span>
+            @endif
+        </div>
+    </div>
+
 </body>
 </html>

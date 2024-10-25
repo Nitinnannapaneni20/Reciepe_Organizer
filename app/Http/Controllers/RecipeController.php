@@ -13,6 +13,12 @@ class RecipeController extends Controller
         return view('recipes.index', compact('recipes'));
     }
 
+    public function show($id)
+    {
+        $recipe = Recipe::findOrFail($id);
+        return view('recipes.show', compact('recipe'));
+    }
+
     // Show the form to create a new recipe
     public function create()
     {

@@ -32,6 +32,16 @@ h1 {
     border-bottom: 1px solid #ddd;
 }
 
+
+.recipe-table th a {
+    color: white !important;
+    text-decoration: none;
+}
+
+.recipe-table th a:hover {
+    text-decoration: underline;
+}
+
 .recipe-table th {
     background-color: #333;
     color: white;

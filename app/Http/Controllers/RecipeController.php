@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+require_once app_path('Helpers/sort_helper.php');
 
 class RecipeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $recipes = Recipe::all();
-        return view('recipes.index', compact('recipes'));
+        $column = $request->input('sort_by', 'id');
+        $order = $request->input('order', 'asc');
+        
+        $recipes = applySorting(Recipe::query(), $column, $order)->get();
+        
+        return view('recipes.index', compact('recipes', 'column', 'order'));
     }
 
     public function show($id)

@@ -4,6 +4,7 @@
     <title>Recipe Organizer</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar_style.css') }}">
 </head>
 <body>
 

@@ -11,6 +11,9 @@
 
     <div class="container">
         <h1>{{ $recipe->name }}</h1>
+
+        <h3>Cuisine:</h3>
+        <p>{{ $recipe->cuisine }}</p>
         
         <h3>Ingredients:</h3>
         <p>{{ $recipe->ingredients }}</p>

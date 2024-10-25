@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recipes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('recipes', function (Blueprint $table) {
+            $table->string('cuisine')->nullable(); // Add the cuisine column
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
-        Schema::dropIfExists('recipes');
+        Schema::table('recipes', function (Blueprint $table) {
+            $table->dropColumn('cuisine'); // Rollback by dropping the cuisine column
+        });
     }
+    
 };

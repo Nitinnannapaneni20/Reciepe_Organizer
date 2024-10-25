@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('recipes', function (Blueprint $table) {
             $table->id();
             $table->string('name');          // Recipe name
+            $table->string('cuisine')->nullable(); // Instead of 'country'
             $table->text('ingredients');     // Ingredients list
             $table->text('instructions');    // Cooking instructions
             $table->timestamps();            // Created/Updated timestamps

@@ -21,6 +21,11 @@
             </div>
 
             <div class="form-group">
+                <label for="cuisine">Cuisine</label>
+                <input type="text" name="cuisine" id="cuisine" value="{{ $recipe->cuisine }}" required>
+            </div>
+
+            <div class="form-group">
                 <label for="ingredients">Ingredients</label>
                 <textarea name="ingredients" id="ingredients" required>{{ $recipe->ingredients }}</textarea>
             </div>

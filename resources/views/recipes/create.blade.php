@@ -20,6 +20,11 @@
             </div>
 
             <div class="form-group">
+            <label for="cuisine">Cuisine</label>
+            <input type="text" name="cuisine" id="cuisine" class="form-control" required>
+            </div>
+
+            <div class="form-group">
                 <label for="ingredients">Ingredients</label>
                 <textarea name="ingredients" id="ingredients" class="form-control" required></textarea>
             </div>

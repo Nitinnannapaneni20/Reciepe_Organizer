@@ -1,0 +1,50 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-nav li {
+    display: inline;
+}
+
+.navbar-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+.navbar-nav a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Container Styling */
+.container {
+    padding: 20px;
+}

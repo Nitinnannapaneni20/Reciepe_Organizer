@@ -22,17 +22,15 @@
             placeholder="Search recipes..." 
             id="search-input" 
             value="{{ request('query') }}" 
-            style="padding-left: 1rem; font-size: 1rem; height: 2.4rem;"
         />
         
-        <button type="submit" style="display: flex; align-items: center; gap: 0.3rem; font-size: 1rem;">
+        <button type="submit">
             🔍 <span>Search</span>
         </button>
         
         <button 
             type="search-button" 
             onclick="document.getElementById('search-input').value = ''; this.form.submit();" 
-            style="display: flex; align-items: center; gap: 0.3rem; font-size: 1rem;"
         >
             ✖️ <span>Clear</span>
         </button>

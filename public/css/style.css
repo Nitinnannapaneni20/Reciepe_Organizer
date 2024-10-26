@@ -87,6 +87,10 @@ h1 {
 
 .btn-create{
     background-color:#02441e;
+    a {
+        color: white; /* Set the link color to white */
+        text-decoration: none; /* Remove underline */
+    }
 }
 
 .btn:hover {

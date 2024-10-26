@@ -12,12 +12,16 @@ class RecipeController extends Controller
     {
         $column = $request->input('sort_by', 'id');
         $order = $request->input('order', 'asc');
-        
-        $recipes = applySorting(Recipe::query(), $column, $order)->paginate(10);
-        
-        return view('recipes.index', compact('recipes', 'column', 'order'));
+        $search = $request->input('query');
+    
+        $recipes = Recipe::when($search, function ($queryBuilder) use ($search) {
+            $queryBuilder->where('name', 'like', "%{$search}%")
+                         ->orWhere('cuisine', 'like', "%{$search}%");
+        })->orderBy($column, $order)->paginate(10);
+    
+        return view('recipes.index', compact('recipes', 'column', 'order', 'search'));
     }
-
+    
     public function show($id)
     {
         $recipe = Recipe::findOrFail($id);

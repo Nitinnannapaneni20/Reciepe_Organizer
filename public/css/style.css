@@ -8,7 +8,7 @@ body {
 
 .container {
     width: 80%;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,6 @@ h1 {
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
 
 .recipe-table th a {
     color: white !important;
@@ -125,29 +124,32 @@ h1 {
     color: #ccc;
 }
 
-/* Container to keep everything aligned in a single line */
 form {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
 input[type="text"] {
     border-radius: 4px;
-    padding: 4px; /* Reduced padding for smaller height */
-    font-size: 0.9rem; /* Slightly smaller font size for compact look */
-    height: 1.2rem; /* Half of the original height */
+    padding: 4px 8px; 
+    font-size: 0.8rem; 
+    height: 1rem; 
+    width: auto; 
+    border: 1px solid #ced4da; 
 }
-
 search-button {
-    border: none;
-    background: none;
+    border: 1px solid #ced4da;
+    background: #f8f9fa; 
+    color: #333;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem; 
     display: flex;
     align-items: center;
-    gap: 0.3rem;
-    padding: 4px; /* Reduced padding to match the smaller input field */
-    height: 1.2rem; /* Matches input height */
+    gap: 0.2rem;
+    padding: 2px 6px; 
+    height: 1.5rem;
+    border-radius: 4px;
 }
 
 

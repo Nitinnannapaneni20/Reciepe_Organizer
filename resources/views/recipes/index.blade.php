@@ -14,6 +14,31 @@
         <h1>Recipe List</h1>
         <table class="recipe-table">
         <thead>
+        <form action="{{ route('recipes.index') }}" method="GET" style="display: flex; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <input 
+            type="text" 
+            name="query" 
+            placeholder="Search recipes..." 
+            id="search-input" 
+            value="{{ request('query') }}" 
+            style="padding-left: 1rem; font-size: 1rem; height: 2.4rem;"
+        />
+        
+        <button type="submit" style="display: flex; align-items: center; gap: 0.3rem; font-size: 1rem;">
+            🔍 <span>Search</span>
+        </button>
+        
+        <button 
+            type="search-button" 
+            onclick="document.getElementById('search-input').value = ''; this.form.submit();" 
+            style="display: flex; align-items: center; gap: 0.3rem; font-size: 1rem;"
+        >
+            ✖️ <span>Clear</span>
+        </button>
+    </div>
+</form>
+
             <tr>
             <th class="serial-no">S.No</th>
                 <th class="recipe-name">

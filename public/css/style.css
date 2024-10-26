@@ -125,6 +125,32 @@ h1 {
     color: #ccc;
 }
 
+/* Container to keep everything aligned in a single line */
+form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    border-radius: 4px;
+    padding: 4px; /* Reduced padding for smaller height */
+    font-size: 0.9rem; /* Slightly smaller font size for compact look */
+    height: 1.2rem; /* Half of the original height */
+}
+
+search-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 4px; /* Reduced padding to match the smaller input field */
+    height: 1.2rem; /* Matches input height */
+}
+
+
 /* Adjustments for Small Screens */
 @media (max-width: 768px) {
     .container {

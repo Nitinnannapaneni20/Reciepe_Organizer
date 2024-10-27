@@ -20,6 +20,11 @@
             </div>
 
             <div class="form-group">
+                <label for="image">Image URL</label>
+                <input type="text" name="image" id="image" value="{{ old('image', $recipe->image ?? '') }}" placeholder="Enter image URL">
+            </div>
+
+            <div class="form-group">
             <label for="cuisine">Cuisine</label>
             <input type="text" name="cuisine" id="cuisine" class="form-control" required>
             </div>

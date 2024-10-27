@@ -10,5 +10,5 @@ class Recipe extends Model
     protected $table = 'recipes';
 
     // Add any guarded or fillable attributes if needed
-    protected $fillable = ['name', 'cuisine', 'ingredients', 'instructions'];
+    protected $fillable = ['name', 'cuisine', 'ingredients', 'instructions','image'];
 }

@@ -43,6 +43,7 @@ class RecipeController extends Controller
             'cuisine' => 'required',  // Add this
             'ingredients' => 'required',
             'instructions' => 'required',
+            'image' => 'required|url',
         ]);
 
         // Create a new recipe

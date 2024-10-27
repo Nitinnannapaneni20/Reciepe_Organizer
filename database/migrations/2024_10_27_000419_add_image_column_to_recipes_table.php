@@ -12,15 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('recipes', function (Blueprint $table) {
-            $table->string('cuisine')->nullable(); // Add the cuisine column
-        });
+            $table->string('image')->nullable(); // The image link column
+        });           
     }
-    
+
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::table('recipes', function (Blueprint $table) {
-            $table->dropColumn('cuisine'); // Rollback by dropping the cuisine column
+            //
         });
     }
-    
 };

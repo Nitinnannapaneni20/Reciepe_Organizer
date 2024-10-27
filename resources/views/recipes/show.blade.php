@@ -12,6 +12,12 @@
     <div class="container">
         <h1>{{ $recipe->name }}</h1>
 
+        @if ($recipe->image)
+            <img src="{{ $recipe->image }}" alt="{{ $recipe->name }}" style="max-width: 100%; height: auto;">
+        @else
+            <p>No image available for this recipe.</p>
+        @endif
+
         <h3>Cuisine:</h3>
         <p>{{ $recipe->cuisine }}</p>
         
